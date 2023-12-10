@@ -9,17 +9,17 @@
     
     <script>
 
-const url = 'https://movies-tv-shows-database.p.rapidapi.com/?movieid=tt1375666';
-const options = {
-	method: 'GET',
-	headers: {
-		Type: 'get-movie-details',
-		'X-RapidAPI-Key': 'fbb7d6a97dmshf4fdc0dd939bbcep11d557jsnb80d5fffdfd9',
-		'X-RapidAPI-Host': 'movies-tv-shows-database.p.rapidapi.com'
-	}
-};
+async function fetchMovieDetails() {
+    const url = 'https://movies-tv-shows-database.p.rapidapi.com/?movieid=tt1375666';
+    const options = {
+        method: 'GET',
+        headers: {
+            Type: 'get-movie-details',
+            'X-RapidAPI-Key': 'fbb7d6a97dmshf4fdc0dd939bbcep11d557jsnb80d5fffdfd9',
+            'X-RapidAPI-Host': 'movies-tv-shows-database.p.rapidapi.com'
+        }
+    };
 
-const runApi = async () => {
     try {
         const response = await fetch(url, options);
         const result = await response.text();
@@ -28,6 +28,10 @@ const runApi = async () => {
         console.error(error);
     }
 }
+
+// Call the function
+fetchMovieDetails();
+
     </script>
 </body>
 </html>
